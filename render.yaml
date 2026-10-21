@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ner-highlighter-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free            # use "starter" to avoid cold starts
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NER_API_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: SPACY_MODEL
+        value: en_core_web_sm
