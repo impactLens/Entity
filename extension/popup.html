@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="content.css">
+<style>
+  body { width: 300px; margin: 0; padding: 12px; font: 13px/1.4 system-ui, sans-serif; }
+  h1 { font-size: 15px; margin: 0 0 8px; }
+  button.act { width: 100%; padding: 8px; margin-bottom: 6px; border-radius: 6px;
+               border: 1px solid #8884; cursor: pointer; font: inherit; }
+  button.primary { background: #1d4e89; color: #fff; border-color: #1d4e89; }
+  button:disabled { opacity: .5; cursor: wait; }
+  #status { min-height: 2.6em; margin: 6px 0; }
+  .err { color: #c62828; }
+  .note { font-size: 11px; opacity: .7; margin-top: 8px; }
+  details { margin: 6px 0; }
+  summary { cursor: pointer; padding: 4px 0; }
+  textarea { width: 100%; box-sizing: border-box; height: 90px; font: inherit; }
+  #out { white-space: pre-wrap; max-height: 220px; overflow: auto; margin-top: 6px; }
+</style>
+</head>
+<body>
+  <h1>Entity Highlighter</h1>
+  <button id="go" class="act primary">Highlight this page</button>
+  <button id="sel" class="act">Highlight selected text</button>
+  <button id="clear" class="act">Clear highlights</button>
+  <button id="settings" class="act">Settings</button>
+  <div id="status"></div>
+  <details>
+    <summary>Analyze pasted text</summary>
+    <textarea id="paste" placeholder="Paste text here"></textarea>
+    <button id="analyze" class="act">Analyze text</button>
+    <div id="out"></div>
+  </details>
+  <div class="note">Page text is sent to your own API server. Avoid sensitive pages.</div>
+  <div class="note" id="ver"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.ner-SECURITY     { --bg:#ffb3b3; --fg:#1a1a1a; }
+.ner-GEOPOLITICAL { --bg:#d8c3f5; --fg:#1a1a1a; }
+.ner-ACADEMIC     { --bg:#b2e8e0; --fg:#1a1a1a; }
+.ner-DATE         { --bg:#f8c8dc; --fg:#1a1a1a; }
+.ner-TIME         { --bg:#bdeefb; --fg:#1a1a1a; }
+.ner-COUNTRY      { --bg:#b6d4fb; --fg:#1a1a1a; }
+.ner-INSTITUTION  { --bg:#c5cde0; --fg:#1a1a1a; }
+.ner-PERSON       { --bg:#ffd6a5; --fg:#1a1a1a; }
+.ner-LOCATION     { --bg:#c7eab4; --fg:#1a1a1a; }
+.ner-PHRASE       { --bg:#fff3b0; --fg:#1a1a1a; }
+
+@media (prefers-color-scheme: dark) {
+  .ner-SECURITY     { --bg:#8b1e1e; --fg:#f5f5f5; }
+  .ner-GEOPOLITICAL { --bg:#4b2e83; --fg:#f5f5f5; }
+  .ner-ACADEMIC     { --bg:#12635a; --fg:#f5f5f5; }
+  .ner-DATE         { --bg:#8a2c5e; --fg:#f5f5f5; }
+  .ner-TIME         { --bg:#0e6577; --fg:#f5f5f5; }
+  .ner-COUNTRY      { --bg:#1d4e89; --fg:#f5f5f5; }
+  .ner-INSTITUTION  { --bg:#2f3b5c; --fg:#f5f5f5; }
+  .ner-PERSON       { --bg:#9a5200; --fg:#f5f5f5; }
+  .ner-LOCATION     { --bg:#2f6b2f; --fg:#f5f5f5; }
+  .ner-PHRASE       { --bg:#6b5d1a; --fg:#f5f5f5; }
+}
+
+mark.ner-hl {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* label filters toggled from the legend */
+.ner-off-SECURITY mark.ner-SECURITY, .ner-off-GEOPOLITICAL mark.ner-GEOPOLITICAL,
+.ner-off-ACADEMIC mark.ner-ACADEMIC, .ner-off-DATE mark.ner-DATE,
+.ner-off-TIME mark.ner-TIME, .ner-off-COUNTRY mark.ner-COUNTRY,
+.ner-off-INSTITUTION mark.ner-INSTITUTION, .ner-off-PERSON mark.ner-PERSON,
+.ner-off-LOCATION mark.ner-LOCATION, .ner-off-PHRASE mark.ner-PHRASE {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+#ner-legend {
+  position: fixed; right: 12px; bottom: 12px; z-index: 2147483647;
+  display: flex; flex-wrap: wrap; gap: 6px; max-width: 320px;
+  padding: 8px; border-radius: 10px;
+  background: rgba(255,255,255,.96); color: #1a1a1a;
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  font: 12px/1.3 system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  #ner-legend { background: rgba(30,30,30,.96); color: #f5f5f5; }
+}
+#ner-legend .ner-chip {
+  background: var(--bg); color: var(--fg);
+  border: 0; border-radius: 999px; padding: 3px 9px; cursor: pointer;
+  font: inherit;
+}
+#ner-legend .ner-chip.off { opacity: .35; text-decoration: line-through; }
+#ner-legend .ner-close {
+  background: transparent; color: inherit; border: 0; cursor: pointer;
+  font: inherit; padding: 3px 6px;
+}

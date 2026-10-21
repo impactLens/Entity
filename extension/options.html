@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Entity Highlighter settings</title>
+<style>
+  body { max-width: 520px; margin: 24px auto; font: 14px/1.5 system-ui, sans-serif; padding: 0 12px; }
+  label { display: block; margin: 14px 0 4px; font-weight: 600; }
+  input[type=text], input[type=password], textarea { width: 100%; padding: 8px; box-sizing: border-box; font: inherit; }
+  button { padding: 8px 14px; margin: 14px 8px 0 0; cursor: pointer; }
+  #msg { margin-top: 12px; min-height: 1.5em; white-space: pre-line; }
+  .err { color: #c62828; }
+</style>
+</head>
+<body>
+  <h1>Entity Highlighter</h1>
+  <label for="urls">API servers (one per line, tried in order)</label>
+  <textarea id="urls" rows="4" placeholder="https://ner-highlighter-api.onrender.com&#10;https://ner-highlighter-api-123.us-central1.run.app"></textarea>
+  <label for="key">API key</label>
+  <input id="key" type="password" placeholder="NER_API_KEY from Render">
+  <label><input id="nltk" type="checkbox"> Extra NLTK pass and key phrases (slower)</label>
+  <button id="save">Save</button>
+  <button id="test">Test connection</button>
+  <div id="msg"></div>
+  <script src="options.js"></script>
+</body>
+</html>

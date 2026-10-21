@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Entity Highlighter",
+  "version": "1.2.0",
+  "description": "Highlight names, places, institutions, security, geopolitical and academic terms, dates and times on any page.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Entity Highlighter"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ]
+}
